@@ -1,0 +1,24 @@
+{
+  "name": "@flagpolejs/json-to-jsonschema",
+  "version": "0.0.1",
+  "description": "JSON to JSON Schema generator",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flagpolejs/json-to-jsonschema.git"
+  },
+  "keywords": [
+    "json",
+    "jsonschema",
+    "schema"
+  ],
+  "author": "Jason Byrne <jasonbyrne662@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flagpolejs/json-to-jsonschema/issues"
+  },
+  "homepage": "https://github.com/flagpolejs/json-to-jsonschema#readme"
+}
