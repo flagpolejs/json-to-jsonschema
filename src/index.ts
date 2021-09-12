@@ -96,10 +96,13 @@ export default function generateJsonSchema(json: any): JsonSchema {
 
   function getType(value: any): JsonSchema_Type {
     const myType = typeof value;
+    if (value === null) {
+      return "null";
+    }
     if (Array.isArray(value)) {
       return "array";
     }
-    if (myType === "object" && myType !== null) {
+    if (myType === "object") {
       return "object";
     }
     if (myType == "boolean") {
