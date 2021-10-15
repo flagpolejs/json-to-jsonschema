@@ -21,11 +21,13 @@ export default function generateJsonSchema(json: any): JsonSchema {
       type: ["object"],
       properties: {},
     };
-    Object.keys(obj).forEach((key) => {
-      if (schema.properties) {
-        schema.properties[key] = parseItem(obj[key]);
-      }
-    });
+    if (obj) {
+      Object.keys(obj).forEach((key) => {
+        if (schema.properties) {
+          schema.properties[key] = parseItem(obj[key]);
+        }
+      });
+    }
     return schema;
   }
 
@@ -96,7 +98,7 @@ export default function generateJsonSchema(json: any): JsonSchema {
 
   function getType(value: any): JsonSchema_Type {
     const myType = typeof value;
-    if (value === null) {
+    if (value === null || value === undefined) {
       return "null";
     }
     if (Array.isArray(value)) {
@@ -116,6 +118,7 @@ export default function generateJsonSchema(json: any): JsonSchema {
 
   function parseItem(item: any): JsonSchema {
     const myType = getType(item);
+
     if (myType === "object") {
       return parseObject(item);
     }
